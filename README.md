@@ -1,20 +1,20 @@
 # Elixir Refs
 
-## official
+## Official
 
 http://phoenixframework.org/
 
 https://elixir-lang.org/docs.html
 
-## forum
+## Forum
 
 https://elixirforum.com/
 
-## practices
+## Practices
 
 http://exercism.io/languages/elixir/about
 
-## news
+## News
 
 https://elixirweekly.net/
 

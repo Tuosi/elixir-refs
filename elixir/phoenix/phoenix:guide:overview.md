@@ -46,7 +46,7 @@ internal parts (each with its own purpose and role)
 
 - pub-sub: underlies the channel layer, allow client to subscribes to topics
 
-  - pub-sub adapter: abstract for third-party pub-sub integration 
+  - pub-sub adapter: abstract for third-party pub-sub integration
 
 ## Phoenix Layers
 
