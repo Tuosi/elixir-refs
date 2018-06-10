@@ -42,6 +42,8 @@ https://twitter.com/elixirstatus
 
 https://twitter.com/elixirweekly
 
+https://twitter.com/elixirphoenix
+
 ## Github Repos
 
 https://github.com/itsgreggreg/elixir_quick_reference
