@@ -42,6 +42,6 @@
 
 ## References
 
-[mdn]([https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+[mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
 
 
