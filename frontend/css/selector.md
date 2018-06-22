@@ -20,7 +20,7 @@
 
 5. Attribute Selector
 
-   `div[attribute="SomeValue"] {}`
+   `div[attribute="some-value"] {}`
 
 ## Combinators
 
