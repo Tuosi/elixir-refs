@@ -20,7 +20,7 @@
 
 5. Attribute Selector
 
-   `div[attribute="SomeValue"] {}`
+   `div[attribute="some-value"] {}`
 
 ## Combinators
 
@@ -42,6 +42,6 @@
 
 ## References
 
-[mdn]([https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+[mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
 
 
