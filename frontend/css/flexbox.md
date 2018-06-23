@@ -14,7 +14,7 @@ A new value add to 'display' property
 
     `display: flex | inline-flex;`
 
-container
+1. Container
 - main axis
     - main start
     - main end
@@ -22,7 +22,7 @@ container
     - cross start
     - cross end
 
-item
+2. Item
 - main size
 - cross size
 
