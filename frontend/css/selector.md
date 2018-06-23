@@ -95,7 +95,7 @@
     `p:nth-child(n) {}`
 
 14. First Element of its Parent Selector
-   
+
     `p:first-of-type {}`
 
 15. Elements that have no Children Selector

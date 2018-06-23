@@ -6,6 +6,18 @@
 
 `git stash save 'foo'` # 保存并添加备注
 
+# List
+
+`git stash list`
+
+## Show
+
+`git stash show`
+
+`git stash show -p`
+
+`git stash show stash@{0}`
+
 ## Retrieve
 
 `git stash pop` # 取出并在stash栈中删除
@@ -16,13 +28,6 @@
 
 `git stash pop --index` # 取出并保留之前的状态
 
-## Show
-
-`git stash show`
-
-`git stash show -p`
-
-`git stash show stash@{0}`
 
 ## Remove
 
