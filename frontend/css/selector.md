@@ -80,27 +80,27 @@
 
 10. First Letter Selector
 
-   `p::first-letter {}`
+    `p::first-letter {}`
 
 11. First Child Selector
 
-   `p:first-child {}`
+    `p:first-child {}`
 
 12. Last Child Selector
 
-   `p:last-child {}`
+    `p:last-child {}`
 
 13. :nth-child Selector
 
-   `p:nth-child(n) {}`
+    `p:nth-child(n) {}`
 
 14. First Element of its Parent Selector
-
-   `p:first-of-type {}`
+   
+    `p:first-of-type {}`
 
 15. Elements that have no Children Selector
 
-   `p:empty {}`
+    `p:empty {}`
 
 ## References
 
