@@ -4,7 +4,7 @@
 
 `git stash`
 
-`git stash save 'foo'` # 保存并添加备注
+`git stash save 'foo'`
 
 # List
 
@@ -20,13 +20,13 @@
 
 ## Retrieve
 
-`git stash pop` # 取出并在stash栈中删除
+`git stash pop`
 
-`git stash apply` # 取出但不在stash栈中删除
+`git stash apply`
 
-`git stash pop stash@{0}` # 取出特定的stash
+`git stash pop stash@{0}`
 
-`git stash pop --index` # 取出并保留之前的状态
+`git stash pop --index`
 
 
 ## Remove
