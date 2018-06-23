@@ -104,6 +104,6 @@
 
 ## References
 
-[mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+[mdn:css:selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
 
 

@@ -22,5 +22,5 @@
 
 ## References
 
-[mdn](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders)
+[mdn:css:background-borders](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Backgrounds_and_Borders)
 
