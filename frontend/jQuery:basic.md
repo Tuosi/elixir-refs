@@ -53,15 +53,144 @@ let cr = document.getElementById('id');
 
 ```
 let cr = $cr[0];
-let cr = $cr.get(0)
+let cr = $cr.get(0);
 ```
 
 - dom -> jquery
 
 ```
-let $cr = $(cr)
+let $cr = $(cr);
 ---
 
+```
+
+## 3. 事件代理: 合理的使用事件冒泡
+
+- 每个 js 事件都会冒泡到父级节点。当需要给多个元素添加相同函数时，这点很赞。
+
+eg: 假设，给表格绑定事件，点击 tb 后，改变背景颜色
+
+```
+$('mTable td').click(function() {
+	$(this).css('background', 'red');
+})
+```
+
+如果有 100 个tb元素，就需要绑定100次事件，性能扛不住。所以：
+
+```
+$('mTable').click(function(e) {
+	let $clicked = $(e.target);
+	$clicked.css('background', 'red');
+})
+```
+
+在 jQuery 1.7中提供的 `on()` 方法，也可以用:
+
+```
+$('mTable').on('click', 'tb', function() {
+	$(this).css('background', 'red')
+})
+```
+
+## javaScript 中的`call`、`apply`、 `bind`
+
+- 一般用来指定 `this` 的环境
+
+> 在 JavaScript 严格模式(strict mode)下, 在调用函数时第一个参数会成为 this 的值， 即使该参数不是一个对象。
+
+> 在 JavaScript 非严格模式(non-strict mode)下, 如果第一个参数的值是 null 或 undefined, 它将使用全局对象替代。
+
+eg:
+
+```
+let a = {
+	user: 'sally',
+	fn: function() {
+		console.info('user ==>', this.user);
+		console.info('this ==>', this)
+	}
+}
+
+let b = a.fn
+b();	// user: undefiled;  this: 非严格模式 window, 严格模式 undefined
+```
+
+> 为啥没有打印出来呢，因为当前 this 对象是 window，而 window 中并没有 user 变量
+
+若非要访问，可以简单的这样做:
+
+```
+let a = {
+	user: 'sally',
+	fn: function() {
+		console.info('user ==>', this.user);
+		console.info('this ==>', this)
+	}
+}
+
+a.fn()	// user: sally;	this: a对象
+```
+
+虽然这种方法可以达目的，但是有时候我们不得不将这个对象保存到另外的一个变量中，所以可以用 call, apply, bind 实现
+
+- `call`: function.call(thisArg, arg1, arg2, ...)
+	- The `call()` method calls a function with a given this value and arguments provided individually.
+
+```
+let a = {
+	user: 'sally',
+	fn: function(x, y) {
+		console.info('user ==>', this.user);
+		console.info('this ==>', this)
+		console.info('x + y = ', x + y)
+	}
+}
+
+let b = a.fn;
+b.call(a, 1, 2);	// 	user: sally;	this: a对象; x + y =  3
+```
+
+> 通过 call 方法，你可以在一个对象上借用另一个对象上的方法，比如Object.prototype.toString.call([])，就是一个Array对象借用了Object对象上的方法。
+
+- `apply`: function.apply(thisArg, [argsArray])
+	- The `apply()` method calls a function with a given this value, and arguments provided as an array (or an array-like object).
+
+```
+let a = {
+	user: 'sally',
+	fn: function(x, y) {
+		console.info('user ==>', this.user);
+		console.info('this ==>', this)
+		console.info('x + y = ', x + y)
+	}
+}
+
+let b = a.fn;
+b.apply(a, [1, 2]);	// 	user: sally;	this: a对象; x + y =  3
+```
+
+- `bind`: function.bind(thisArg[, arg1[, arg2[, ...]]])
+	- The `bind()` method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
+
+```
+let a = {
+	user: 'sally',
+	fn: function(x, y) {
+		console.info('user ==>', this.user);
+		console.info('this ==>', this)
+		console.info('x + y = ', x + y)
+	}
+}
+
+let b = a.fn;
+let func = b.bind(a, 1, 2);	// 调用 bind 会返回一个函数
+func();	// 再次调用即可
+
+---
+
+let func = b.bind(a)
+func(1, 2);	// 在调用时传递参数也行
 ```
 
 ---
@@ -395,3 +524,6 @@ ajaxSuccess(callback)	| ajax 请求成功时执行
 	- 封装对象方法的插件	`jQuery.fn.extend()`
 	- 封装全局函数的插件	`jQuery.extend()`
 	- 选择器插件 			`jQuery.extend()`
+
+
+
