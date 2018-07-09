@@ -4,16 +4,16 @@
   <title>test</title>
 </head>
 <body>
-  <div id="first">
+  <div id="div1">
     <p id="p1">p1</p>
     <p id="p2">p2</p>
   </div>
 
-  <div id="second">
+  <div id="div2">
     <p id="p3">p3</p>
   </div>
 
-  <div id="third">
+  <div id="div3">
     <button id="clickme">click me</button>
   </div>
 
@@ -29,7 +29,7 @@
         let targetTextNode = document.createTextNode("foo");
         target.appendChild(targetTextNode);
 
-        let div1 = document.getElementById("first");
+        let div1 = document.getElementById("div1");
         div1.appendChild(target);
         target.id = "foo"
 
@@ -44,7 +44,7 @@
         let targetTextNode = document.createTextNode("foo");
         target.appendChild(targetTextNode);
 
-        let div1 = document.getElementById("first");
+        let div1 = document.getElementById("div1");
         let child = document.getElementById("p2");
         div1.insertBefore(target, child);
         target.id = "foo"

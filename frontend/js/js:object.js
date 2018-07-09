@@ -1,16 +1,14 @@
 // object
 
-// base -> Object
-
 // object has attributes and functions
 
 obj = { a: 1, b: 2 };
 
-// visit attribute
+// read
 obj['a'];
 obj.a;
 
-// modify attribute
+// write, modify
 obj['a'] = 111;
 obj.a = 111;
 
@@ -24,7 +22,7 @@ function User(name, email) {
   this.sayHi = function() { return 'hi' };
 }
 
-user = new User("wende", "test@email.com");
+user = new User("test", "test@email.com");
 user.sayHi();
 
 // prototype
