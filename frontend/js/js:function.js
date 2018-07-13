@@ -7,7 +7,7 @@ f(1, 2); // 3
 
 // variable function
 let af = function () { return "ok"; }
-af(); // "ok"dfsf
+af(); // "ok"
 
 // call it now
 (function() { return "ok"; } )(); // "ok"
