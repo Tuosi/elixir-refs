@@ -14,12 +14,12 @@ end
 
 ````javascript
 let xmlhttp = new XMLHttpRequest();
-let method = "GET"; // "POST"
+let httpMethod = "GET"; // "POST"
 let url = "http://localhost:3002/users.json";
-let async = true;
+let isAsync = true;
 
 xmlhttp.setRequestHeader("foo", "bar");
-xmlhttp.open(method, url, async);
+xmlhttp.open(httpMethod, url, isAsync);
 xmlhttp.send();
 
 xmlhttp.readyState; // 4
@@ -35,19 +35,19 @@ xmlhttp.onreadystatechange = function() {
 ````
 
 ## readyState:
-when 0: init...
-when 1: connect servce
-when 2: send request
-when 3: process request
-when 4: receive response
+- when 0: init...
+- when 1: connect servce
+- when 2: send request
+- when 3: process request
+- when 4: receive response
 
 ## http status code:
-when 200: ok
-when 304: browser cache ok
-when 400: wrong action
-when 401: unauthenticate
-when 403: unauthorized
-when 404: not found
-when 405: forbidden resource
-when 414: url too long
-when 500: server error
+- when 200: ok
+- when 304: browser cache ok
+- when 400: wrong action
+- when 401: unauthenticate
+- when 403: unauthorized
+- when 404: not found
+- when 405: forbidden resource
+- when 414: url too long
+- when 500: server error
