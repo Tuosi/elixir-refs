@@ -7,6 +7,9 @@
 cmd + [ / ] -> nav history
 cmd + shift + [ / ]  -> nav tabs
 cmd + w / shift + w -> close / extract tab
+cmd + t -> open new tab
+cmd + r -> reload page
+cmd + l -> select url
 
 ### Vimium
 
