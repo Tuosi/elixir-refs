@@ -6,7 +6,7 @@
 
 `git stash save 'foo'`
 
-# List
+## List
 
 `git stash list`
 
