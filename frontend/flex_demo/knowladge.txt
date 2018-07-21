@@ -1,0 +1,29 @@
+1. img 放在 block 元素中，底部会有间隙
+
+```
+img {
+    display: block;
+    或者
+    vertical-align: bottom | text-bottom;
+    或者
+    overflow: hidden;
+}
+
+或者
+
+img 父级 block {
+    font-size: 0;
+}
+```
+
+2. flex
+
+```
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+```

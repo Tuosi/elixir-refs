@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/about/about",
+    "pages/me/me",
+    "pages/foods/foods"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "index",
+      "iconPath": "/assets/tabs/index.png",
+      "selectedIconPath": "/assets/tabs/index.png"
+    },{
+      "pagePath": "pages/logs/logs",
+      "text": "logs",
+      "iconPath": "/assets/tabs/logs.png",
+      "selectedIconPath": "/assets/tabs/logs.png"
+    },{
+      "pagePath": "pages/about/about",
+      "text": "about",
+      "iconPath": "/assets/tabs/about.png",
+      "selectedIconPath": "/assets/tabs/about.png"
+    },
+    {
+      "pagePath": "pages/me/me",
+      "text": "me",
+      "iconPath": "/assets/tabs/me.png",
+      "selectedIconPath": "/assets/tabs/me.png"
+    }] 
+  }
+}

@@ -1,0 +1,51 @@
+page {
+  background-color: #fff;
+}
+
+.food {
+  padding: 30rpx 15rpx;
+  display: flex;
+  background-color: #ddd;
+  position: relative;
+  border-bottom: 2rpx solid #ccc;
+}
+
+.food image {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 16rpx;
+}
+
+.food-info {
+  width: 520rpx;
+  height: 160rpx;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.food-addr, .food-phone, .food-time {
+  font-size: 12px;
+  color: #333;
+}
+
+.food-star {
+  position: absolute;
+  top: 30rpx;
+  right: 16rpx;
+  color: #aaa;
+}
+
+.food-star-before, .food-star-before2 {
+  color: #f70;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 88%;
+  overflow: hidden;
+}
+
+.food-star-before2 {
+  width: 70%;
+}

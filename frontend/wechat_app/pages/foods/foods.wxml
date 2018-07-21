@@ -1,0 +1,27 @@
+<view class="food">
+  <image src='https://imgservice5.suning.cn/uimg1/b2c/image/K0GXydLS1FEt2zHQkzfKMg==.jpg_400w_400h_4e' mode='aspectFill'></image>
+  <view class='food-info'>
+    <text class='food-title'>食物名称</text>
+    <text class='food-addr'>地址:</text>
+    <text class='food-phone'>电话:</text>
+    <text class='food-time'>营业时间:</text>
+  </view>
+  <view class='food-star'>
+    <view class='food-star-after'>★★★★★</view>
+    <view class='food-star-before'>★★★★★</view>
+  </view>
+</view>
+
+<view class="food">
+  <image src='https://imgservice5.suning.cn/uimg1/b2c/image/K0GXydLS1FEt2zHQkzfKMg==.jpg_400w_400h_4e' mode='aspectFill'></image>
+  <view class='food-info'>
+    <text class='food-title'>食物名称</text>
+    <text class='food-addr'>地址:</text>
+    <text class='food-phone'>电话:</text>
+    <text class='food-time'>营业时间:</text>
+  </view>
+  <view class='food-star'>
+    <view class='food-star-after'>★★★★★</view>
+    <view class='food-star-before2'>★★★★★</view>
+  </view>
+</view>

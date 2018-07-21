@@ -1,0 +1,15 @@
+<view class='card'>
+  <text class='card-title'>华丽丽的大标题</text>
+  <text class='card-date'>2018-07-21</text>
+  <image class='card-img' src='https://image3.suning.cn/uimg/cms/img/153200088324632343.png' mode='aspecFill'></image>
+  <text class='card-desc'>风萧萧兮易水寒</text>
+  <text class='card-read arrow'>查看详情</text>
+</view>
+
+<view class='card'>
+  <text class='card-title'>华丽丽的大标题</text>
+  <text class='card-date'>2018-07-21</text>
+  <image class='card-img' src='https://image3.suning.cn/uimg/cms/img/153200088324632343.png' mode='aspecFill'></image>
+  <text class='card-desc'>风萧萧兮易水寒</text>
+  <text class='card-read arrow'>查看详情</text>
+</view>

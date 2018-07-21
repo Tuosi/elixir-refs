@@ -1,0 +1,25 @@
+<view class='slider'>
+  <swiper indicator-dots="{{ true }}" interval='10000' autoplay="{{ true }}" circular="{{ true }}">
+    <swiper-item wx:for="{{ sliders }}" wx:key="id">
+      <image src='{{ item.image }}'></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class='index-nav'>
+  <navigator url='{{ item.link }}' class='nav-item' wx:for="{{ navList }}" wx:key="id">
+    <image src='{{ item.image }}'></image>
+    <text>{{ item.title }}</text>
+  </navigator>
+</view>
+
+<view class='divider'></view>
+
+<view class='index-enter'>
+  <navigator class='enter-item'>
+    <image src='/assets/images/avatar.jpg'></image>
+  </navigator>
+  <navigator>
+    <image src='/assets/images/avatar.jpg'></image>
+  </navigator>
+</view>

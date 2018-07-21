@@ -69,7 +69,7 @@ document.body.clientHeight
 document.body.clientWigth
 ```
 
-> ⚠️ document.compatMode 价差页面是否处于标准模式
+> ⚠️ document.compatMode 检查页面是否处于标准模式
 
 - `window.resizeTo(x, y)`
 - `window.resizeBy(offsetX, offsetY)`
@@ -136,7 +136,7 @@ search		| '?q=js'
 ```
 location.assign('https://www.google.com')	# 直接打开页面
 
-# 下面两个方法默认调用 assign, 与 assign 方法想过相同
+# 下面两个方法默认调用 assign, 与 assign 方法效果相同
 window.location = 'https://www.google.com'
 location.href = 'https://www.google.com'
 ```
