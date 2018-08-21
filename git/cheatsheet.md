@@ -160,7 +160,39 @@
   git config --list # show all settings
 
   git config --global user.name 'Wende Lu'
-  git config --global user.email wendelu@gmail.com
+
+  git config --global user.email wendelu1991@gmail.com
+````
+
+setting: ~/.gitconfig
+````
+  [user]
+    name = Wende Lu
+    email = wendelu1991@gmail.com
+  [push]
+    default = matching
+  [alias]
+    st = status
+    co = checkout
+    br = branch
+    up = rebase
+    ci = commit
+    last = log -1 HEAD
+    unstage = reset HEAD --
+  [core]
+    editor = vim
+    excludesfile = /Users/wendelu/.gitignore_global
+  [color]
+    ui = true
+  [merge]
+    tool = vimdiff
+  [commit]
+    template = /Users/wendelu/.stCommitMsg
+  [filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 ````
 
 ## .gitignore
