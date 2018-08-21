@@ -173,6 +173,7 @@ setting: ~/.gitconfig
     default = matching
   [alias]
     st = status
+    sts = status -s
     co = checkout
     br = branch
     up = rebase
