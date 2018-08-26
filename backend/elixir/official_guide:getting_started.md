@@ -113,7 +113,7 @@ put_elem tuple, 1, "foo" # {:ok, "foo"}
         * traverse the whole list
     + concatenation depends on the length of the left-hand list
         * traverse the whole left-hand list
-        * `[1] ++ [2, 3, 4, 5]` is better than `[1, 2, 3, 4] ++ [1]`
+        * `[1] ++ [2, 3, 4, 5]` is better than `[1, 2, 3, 4] ++ [5]`
 - Tuples are stored contiguously in memory
     +  getting the tuple size or accessing an element by index is fast
     +  updating or adding elements to tuples is expensive (create new)
@@ -126,14 +126,14 @@ put_elem tuple, 1, "foo" # {:ok, "foo"}
     +  length, String.length
 
 ## 3. Basic Operators
-- String: <>
-- List: ++; --
+- String: `<>`
+- List: `++; --`
 - Logic (short-circuit operators):
-    + &&; ||; ! # simple mode
-    + and; or; not # strict mode
+    + `&&; ||; ! # simple mode`
+    + `and; or; not # strict mode`
 - Comparision:
-    + == # simple mode
-    + === # strict mode
+    + `== # simple mode`
+    + `=== # strict mode`
 - Type Comparision:
     + number < atom < reference < function < port < pid < tuple < map < list < bitstring
 
