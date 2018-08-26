@@ -1,25 +1,18 @@
 # Elixir Guide: Getting Started
 
 ## 1. Intro
-
 - install elixir and erlang
-
 - interactive mode: iex
-
 - bin: elixir, elixirc, iex
 
 ## 2. Basic Types
 
-### features:
-
+### General
+- iex i: check data type
+- iex h: check helpers
 - immutable: cannot change it, only transform it.
 
-- iex i: check data type
-
-- iex h: check helpers
-
 ### Basic
-
 ````elixir
 # integer, float, string, boolean, atom, list, tuple, map, etc.
 {1, 2, 3} # tuple
@@ -30,7 +23,6 @@
 ````
 
 ### Number
-
 ````elixir
 0b11 # => 3
 0o11 # => 9
@@ -48,7 +40,6 @@ trunc(3.5) # => 3
 ````
 
 ### Boolean
-
 ````elixir
 true; false; # atom
 is_boolean(true) # true
@@ -56,7 +47,6 @@ is_atom(true) # true
 ````
 
 ### Atom
-
 ````elixir
 is_atom(:true) # true
 is_atom(true) # true
@@ -65,7 +55,6 @@ is_atom(Foo) # true
 ````
 
 ### String
-
 ````elixir
 "foo
 bar" # "foo\nbar"
@@ -77,7 +66,6 @@ String.upcase("hellö") # "HELLÖ"
 ````
 
 ### Function
-
 ````elixir
 add = fn x, y -> x + y end
 is_function add # true
@@ -93,7 +81,6 @@ double.(3) # 6
 ````
 
 ### (Linked) List
-
 ````elixir
 list = [1, 2, 3, true]
 length list # 4
@@ -113,7 +100,6 @@ tl [] # ** (ArgumentError) argument error
 ````
 
 ### Tuple
-
 ````elixir
 tuple = {:ok, "result"}
 tuple_size tuple # 2
@@ -138,3 +124,17 @@ put_elem tuple, 1, "foo" # {:ok, "foo"}
     +  tuple_size, byte_size
 -  **length**: operation is linear
     +  length, String.length
+
+## 3. Basic Operators
+- String: <>
+- List: ++; --
+- Logic (short-circuit operators):
+    + &&; ||; ! # simple mode
+    + and; or; not # strict mode
+- Comparision:
+    + == # simple mode
+    + === # strict mode
+- Type Comparision:
+    + number < atom < reference < function < port < pid < tuple < map < list < bitstring
+
+## 4. Pattern matching
