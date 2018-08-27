@@ -421,7 +421,7 @@ func2 = &"Good #{&1}"
 func2.("morning") # "Good morning"
 ````
 
-## Default arguments
+### Default arguments
 ````elixir
 defmodule Concat do
   def join(a, b \\ nil, sep \\ " ")
