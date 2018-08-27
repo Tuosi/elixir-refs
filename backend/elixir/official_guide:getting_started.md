@@ -310,3 +310,128 @@ to_charlist("hello") # 'hello'
 "foo" <> "bar" # "foobar"
 'foo' ++ 'bar' # 'foobar'
 ````
+
+## 7. Keyword lists and maps
+
+### Keyword lists
+- a list of 2-item tuples as the representation of a key-value data structure
+- list of tuples and the first item of the tuple (i.e. the key) is an atom
+- features:
+  + Keys must be atoms.
+  + Keys are ordered, as specified by the developer.
+  + Keys can be given more than once.
+- are not very useful with pattern matching (need same length)
+- keyword lists are used in Elixir mainly for passing optional values
+
+````elixir
+list = [{:a, 1}, {:b, 2}]
+list == [a: 1, b: 2] # true
+list ++ [c: 3] # [a: 1, b: 2, c: 3]
+
+new_list = [a: 0] ++ list # [a: 0, a: 1, b: 2]
+new_list[:a] # 0
+
+if false, do: :this, else: :that # :that
+if(false, [do: :this, else: :that]) # :that
+if(false, [{:do, :this}, {:else, :that}]) # :that
+````
+
+### Maps
+- features:
+  + Maps allow any value as a key.
+  + Maps’ keys do not follow any ordering.
+- are very useful with pattern matching
+
+````elixir
+map = %{:a => 1, :b => 2}
+map == %{a: 1, b: 2} # true
+
+# fetch
+map[:a] # 1
+map[:c] # nil
+
+# fetch (assertive style) (prefer)
+map.a # 1
+map.c # ** (KeyError) key
+
+# pattern matching
+%{a: x} = %{:a => 1, :b => 2} # (a is 1)
+
+Map.get(%{a: 1, b: 2}, :a) # 1
+Map.put(%{a: 1, b: 2}, :c, 3) # %{a: 1, b: 2, c: 3}
+Map.to_list(%{a: 1, b: 2}) # [a: 1, b: 2]
+
+%{%{a: 1, b: 2} | b: 1} # %{a: 1, b: 1} (update)
+%{%{a: 1, b: 2} | c: 3} # ** (KeyError) key :c not found in
+````
+
+### Nested data structures
+````elixir
+users = [
+  wende: %{name: "Wende", age: 18, langs: ["erl", "ruby", "elixir"]},
+  zhaobo: %{name: "Zhaobo", age: 19, langs: ["elixir", "f#", "java"]}
+]
+
+users[:wende].age # 18
+put_in users[:wende].age, 31 # return updated users
+update_in users[:zhaobo].langs, fn langs -> List.delete(langs, "java") end
+
+# put_in/2 put_in/3
+# update_in/2 update_in/3
+# get_and_update_in/2 get_and_update_in/3
+````
+
+## 8.Modules and functions
+
+### Compilation
+- Elixir projects are usually organized into three directories:
+  + **ebin** - contains the compiled bytecode
+  + **lib** - contains elixir code (usually .ex files)
+  + **test** - contains tests (usually .exs files)
+
+### Named functions
+````elixir
+defmodule Math do
+  def zero?(0), do: true
+  def zero?(x) when is_integer(x), do: false
+end
+
+IO.puts Math.zero?(0)         # true
+IO.puts Math.zero?(1)         # false
+IO.puts Math.zero?([1, 2, 3]) # ** (FunctionClauseError)
+IO.puts Math.zero?(0.0)       # ** (FunctionClauseError)
+````
+
+### Function capturing
+- name/arity to refer to functions
+
+````elixir
+Math.zero?(0) # true
+func = &Math.zero?/1 # &Math.zero?/1
+func.(0) # true
+is_function(func) # true
+(&is_function/1).(func) # true
+
+# same as fn x -> x + 1 end
+func1 = &(&1 + 1)
+func1.(1) # 2
+
+# same as fn x -> "Good #{x}" end
+func2 = &"Good #{&1}"
+func2.("morning") # "Good morning"
+````
+
+## Default arguments
+````elixir
+defmodule Concat do
+  def join(a, b \\ nil, sep \\ " ")
+  def join(a, b, _sep) when is_nil(b), do: a end
+  def join(a, b, sep), do: a <> sep <> b end
+end
+
+IO.puts Concat.join("Hello", "world")      #=> Hello world
+IO.puts Concat.join("Hello", "world", "_") #=> Hello_world
+IO.puts Concat.join("Hello")               #=> Hello
+````
+
+## 9. Recursion
